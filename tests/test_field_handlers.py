@@ -177,3 +177,23 @@ class TestFieldHandlers(unittest.TestCase):
             )
         )
         self.assertAlmostEqual(fh.half_width(record), 10.)
+
+    def test_theme_keywords_concat_concatenates_keywords(self):
+        record = M.RECORD(
+            M.DATAFIELD({"tag": "650"},
+                M.SUBFIELD("Mr", code="a"),
+                M.SUBFIELD("Snuggles", code="a")
+            )
+        )
+        self.assertSetEqual(set(fh.theme_keywords_concat(record).split()),
+                            set(["Mr", "Snuggles"]))
+
+    def test_place_keywords_concat_concatenates_keywords(self):
+        record = M.RECORD(
+            M.DATAFIELD({"tag": "650"},
+                M.SUBFIELD("Lady", code="z"),
+                M.SUBFIELD("Fluffypants", code="z")
+            )
+        )
+        self.assertSetEqual(set(fh.place_keywords_concat(record).split()),
+                            set(["Lady", "Fluffypants"]))

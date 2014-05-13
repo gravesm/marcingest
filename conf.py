@@ -6,7 +6,9 @@ SOLR_URL = "http://localhost/solr/"
 
 FIELD_HANDLERS = {
     'DataType': fh.datatype,
+    'ThemeKeywords': fh.theme_keywords_concat,
     'ThemeKeywordsSort': fh.theme_keywords,
+    'PlaceKeywords': fh.place_keywords_concat,
     'PlaceKeywordsSort': fh.place_keywords,
     'Publisher': fh.publisher,
     'LayerId': fh.layer_id,

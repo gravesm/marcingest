@@ -19,7 +19,7 @@ _XPATHS = {
     "260_b": "marc:datafield[@tag='260']/marc:subfield[@code='b']",
     "500_a": "marc:datafield[@tag='500']/marc:subfield[@code='a']/text()",
     "650_a": "marc:datafield[@tag='650']/marc:subfield[@code='a']",
-    "650_z": "marc:datafield[@tag='650'][marc:subfield[@code='z']]",
+    "650_z": "marc:datafield[@tag='650']/marc:subfield[@code='z']",
     "876_k": "marc:datafield[@tag='876']/marc:subfield[@code='k']",
 }
 

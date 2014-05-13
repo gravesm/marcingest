@@ -29,8 +29,14 @@ def datatype(record):
 def theme_keywords(record):
     return _keywords(record, XPATHS['650_a'])
 
+def theme_keywords_concat(record):
+    return " ".join(theme_keywords(record))
+
 def place_keywords(record):
     return _keywords(record, XPATHS['650_z'])
+
+def place_keywords_concat(record):
+    return " ".join(place_keywords(record))
 
 def publisher(record):
     xpath = XPATHS['260_b']
