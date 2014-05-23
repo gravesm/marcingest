@@ -16,7 +16,7 @@ def main():
     f = sys.argv[1]
     fp = open(f)
     solr = pysolr.Solr(conf.SOLR_URL)
-    docs = map(parse, read(fp, filters.datatype_filter))
+    docs = map(parse, read(fp, filters.combined_filter))
     solr.delete(q="Institution:MIT AND DataType:('Paper Map' OR 'CD-ROM' OR 'DVD-ROM')")
     solr.add(docs)
 
